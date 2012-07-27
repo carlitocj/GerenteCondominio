@@ -1,0 +1,15 @@
+/* 
+    Document   : css
+    Created on : 27/07/2012, 08:44:54
+    Author     : carlito
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    font-size: 12px !important;
+}
