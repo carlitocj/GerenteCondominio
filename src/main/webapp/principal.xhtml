@@ -1,47 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <link type="text/css" rel="stylesheet" href="resources/css/css.css"/>
         <title>Gerente Condomínio</title>
     </h:head>
     <h:body>
-        <pou:layout fullPage="true">  
+        <p:layout fullPage="true">  
 
-            <p:layoutUnit position="north" size="100" styleClass="div-top" style="border: none">  
-                
+            <p:layoutUnit position="north" size="100">  
             </p:layoutUnit>  
 
-            <p:layoutUnit position="west" size="295" collapsible="true">  
- 
-                <p:accordionPanel multiple="true">
-                    <p:tab title="Calendário">
-                        <br />
-                        <p:calendar mode="inline" navigator="none"/>
-                        <br />
-                    </p:tab>
-
-                    <p:tab title="Cadastros">
-                        <h:outputText value="Administradora" /><br/>
-                        <h:outputText value="Condomínio" />
-                    </p:tab>
-
-                    <p:tab title="Financeiro">
-                        <h:outputText value="Taxas" /><br/>
-                        <h:outputText value="Multas" /><br/>
-                        <h:outputText value="Boletos" />
-                    </p:tab>
-                </p:accordionPanel>
+            <p:layoutUnit position="west" size="300" collapsible="true">  
             </p:layoutUnit>  
 
-            <p:layoutUnit position="center" styleClass="div-center">  
-                <h:form>  
-                    This fullPage layout consists of five different layoutUnits which are resizable and closable by default.
-                </h:form>  
+            <p:layoutUnit position="center">  
             </p:layoutUnit>  
 
-        </pou:layout> 
+        </p:layout> 
     </h:body>
 </html>
 
