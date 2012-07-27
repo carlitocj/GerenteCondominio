@@ -8,6 +8,7 @@ import br.com.condominio.model.Autorizacao;
 import br.com.condominio.model.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 /**
  *
@@ -23,8 +24,8 @@ public class HibernateUtil {
             config.addAnnotatedClass(Autorizacao.class);
             config.addAnnotatedClass(Usuario.class);
             //descomentar para criar a base
-            //SchemaExport se = new SchemaExport(config);
-            //se.create(true, true);
+            SchemaExport se = new SchemaExport(config);
+            se.create(true, true);
             return config.configure().buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
