@@ -1,13 +1,27 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <link type="text/css" rel="stylesheet" href="resources/css/css.css"/>
         <title>Login</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <p:dialog header="Login" visible="true" closable="false" draggable="false" resizable="false" width="300">
+            <center>
+                <h:outputText value="Usuário ou senha incorretos!" rendered="#{param.erro}" style="color: darkred"/>
+            </center>
+            <form action="j_spring_security_check" method="post">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="j_username" value="Usuário:" /> 
+                    <h:inputText id="j_username" required="true"/>
+                    <h:outputLabel for="j_password" value="Senha:" />
+                    <h:inputSecret id="j_password" required="true"/>
+                    <h:commandButton value="Entrar"/>
+                </h:panelGrid>
+            </form>
+        </p:dialog>
     </h:body>
 </html>
 
