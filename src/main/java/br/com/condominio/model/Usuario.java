@@ -10,6 +10,7 @@ package br.com.condominio.model;
  */
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
  
 @Entity
@@ -22,8 +23,8 @@ public class Usuario implements Serializable {
     private String senha;
     @Column(name = "ativo", columnDefinition = "BOOLEAN")
     private boolean ativo;
-    //@OneToMany
-    //private List<Autorizacao> autorizacoes;
+    @OneToMany
+    private List<Autorizacao> autorizacoes;
  
     public Usuario() {
     }
@@ -59,4 +60,13 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public List<Autorizacao> getAutorizacoes() {
+        return autorizacoes;
+    }
+
+    public void setAutorizacoes(List<Autorizacao> autorizacoes) {
+        this.autorizacoes = autorizacoes;
+    }
+    
 }

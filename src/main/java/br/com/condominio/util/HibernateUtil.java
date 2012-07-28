@@ -23,9 +23,14 @@ public class HibernateUtil {
             Configuration config = new Configuration();
             config.addAnnotatedClass(Autorizacao.class);
             config.addAnnotatedClass(Usuario.class);
-            //descomentar para criar a base
-            SchemaExport se = new SchemaExport(config);
-            se.create(true, true);
+            config.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+            config.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
+            config.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/gerentecondominio");
+            config.setProperty("hibernate.connection.username", "postgres");
+            config.setProperty("hibernate.connection.password", "postgres");
+//            descomentar para criar a base
+//            SchemaExport se = new SchemaExport(config);
+//            se.create(true, true);
             return config.configure().buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
@@ -34,5 +39,9 @@ public class HibernateUtil {
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
+    }
+
+    public static void main(String[] args) {
+        HibernateUtil.getSessionFactory();
     }
 }
