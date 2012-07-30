@@ -1,0 +1,8 @@
+Após criar as tabelas pelo hibernate, executar os seguintes comandos sql para possibilitar o login no sistema:
+
+
+insert into usuario values (1, true, 'admin', 'admin');
+
+insert into autorizacao values (1, 'usuario');
+
+insert into usuario_autorizacao values (1, 1);
