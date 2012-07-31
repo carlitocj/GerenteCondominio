@@ -2,24 +2,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <link type="text/css" rel="stylesheet" href="resources/css/css.css"/>
-        <title>Gerente Condomínio</title>
-    </h:head>
-    <h:body>
-        <p:layout fullPage="true">  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view>
+        <h:head>
+            <link type="text/css" rel="stylesheet" href="resources/css/css.css"/>
+            <title>Gerente Condomínio</title>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">  
 
-            <p:layoutUnit position="north" size="100">  
-            </p:layoutUnit>  
+                <p:layoutUnit position="north" size="100">
+                    <div align="right" >
+                        <br/>
+                        <h:outputText value="Usuário: #{usuarioController.usuario.nome}"/>
+                        <br/><br/>
+                        <h:outputLink value="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
+                            <h:outputText value="Sair"/>
+                        </h:outputLink>
+                    </div>
+                </p:layoutUnit>  
 
-            <p:layoutUnit position="west" size="300" collapsible="true">  
-            </p:layoutUnit>  
+                <p:layoutUnit position="west" size="300">
+                    <p:accordionPanel multiple="true">  
+                        <p:tab title="Cadastros">  
 
-            <p:layoutUnit position="center">  
-            </p:layoutUnit>  
+                        </p:tab>  
+                        <p:tab title="Financeiro">  
 
-        </p:layout> 
-    </h:body>
+                        </p:tab>  
+                        <p:tab title="Calendário">  
+                            <br/>
+                            <p:calendar mode="inline" navigator="none"/>
+                            <br/>
+                        </p:tab>  
+                    </p:accordionPanel> 
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="center">  
+                </p:layoutUnit>  
+
+            </p:layout> 
+        </h:body>
+    </f:view>
 </html>
 

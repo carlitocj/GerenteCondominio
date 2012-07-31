@@ -9,9 +9,9 @@
     </h:head>
     <h:body>
         <p:dialog header="Login" visible="true" closable="false" draggable="false" resizable="false" width="300">
-            <center>
+            <div align="center">
                 <h:outputText value="Usuário ou senha incorretos!" rendered="#{param.erro}" style="color: darkred"/>
-            </center>
+            </div>
             <form action="j_spring_security_check" method="post">
                 <h:panelGrid columns="2" cellpadding="5">
                     <h:outputLabel for="j_username" value="Usuário:" /> 

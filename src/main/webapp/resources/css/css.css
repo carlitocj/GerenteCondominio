@@ -12,5 +12,7 @@ root {
 
 body {
     font-size: 12px !important;
-    background: #f8fafa;
+    background-image: url("../image/bg.jpg");
+    background-position: center center;
+    background-attachment: fixed;
 }
