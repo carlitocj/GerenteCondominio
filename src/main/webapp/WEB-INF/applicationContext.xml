@@ -8,18 +8,18 @@
                             http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/principal.jsf" access="hasRole('usuario')"/>
+        <intercept-url pattern="/principal.jsf" access="hasRole('usuario')" />
         <form-login login-page="/login.jsf" authentication-failure-url="/login.jsf?erro=true"/>
         <logout logout-success-url="/login.jsf"/>
     </http>
 
     <authentication-manager>
         <authentication-provider>
-            <!--<password-encoder hash="md5"/>-->
+            <password-encoder hash="md5"/>
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query="select nome, senha, ativo from usuario where nome = ?"
                                authorities-by-username-query="select usuario.nome, autorizacao.nome from usuario, autorizacao, usuario_autorizacao
-               where usuario.id = usuario_autorizacao.usuario_id and autorizacao.id = usuario_autorizacao.autorizacoes_id and
+               where usuario.id = usuario_autorizacao.usuario_id and autorizacao.id = usuario_autorizacao.autorizacao_id and
                usuario.nome = ?"
             />
         </authentication-provider>

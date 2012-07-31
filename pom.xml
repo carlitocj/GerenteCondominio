@@ -17,6 +17,7 @@
     </properties>
     
     <repositories>
+        <!-- primefaces -->
         <repository>  
             <id>prime-repo</id>  
             <name>PrimeFaces Maven Repository</name>  
@@ -24,6 +25,7 @@
             <layout>default</layout>  
         </repository>
         
+        <!-- hibernate -->
         <repository>  
             <id>hibernate-repo</id>             
             <name>Hibernate Maven Repository</name> 
@@ -31,6 +33,7 @@
             <layout>default</layout>               
         </repository>  
         
+        <!-- spring security -->
         <repository>
             <id>spring-repo</id>
             <name>Spring Maven Repository</name>
@@ -55,16 +58,7 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-digester</groupId>
-            <artifactId>commons-digester</artifactId>
-            <version>1.5</version>
-        </dependency>
+        <!-- java ee -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -72,10 +66,24 @@
             <scope>provided</scope>
         </dependency>
         
+        <!-- primefaces -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>3.3.1</version>
+        </dependency>
+        
+        <!-- hibernate -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>1.5</version>
         </dependency>
         
         <dependency>
@@ -102,12 +110,14 @@
             <version>3.12.1.GA</version>
         </dependency>
         
+        <!-- driver postgres -->
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.1-901.jdbc4</version>
         </dependency>
         
+        <!-- spring security -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>org.springframework.context</artifactId>

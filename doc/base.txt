@@ -1,8 +1,17 @@
-Após criar as tabelas pelo hibernate, executar os seguintes comandos sql para possibilitar o login no sistema:
+Após criar as tabelas pelo hibernate*, executar os seguintes comandos sql para possibilitar o login no sistema:
+
+*Antes de criar as tabelas, deve-se criar uma base com o nome "gerentecondominio".
 
 
-insert into usuario values (1, true, 'admin', 'admin');
+--sql--
+insert into usuario values (1, true, 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 insert into autorizacao values (1, 'usuario');
 
 insert into usuario_autorizacao values (1, 1);
+------
+
+
+
+Usuário: admin
+Senha: admin

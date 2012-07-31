@@ -18,12 +18,14 @@ import javax.persistence.*;
 public class Usuario implements Serializable {
  
     @Id
+    @GeneratedValue
     private int id;
     private String nome;
-    private String senha;
-    @Column(name = "ativo", columnDefinition = "BOOLEAN")
+    private String senha;    
     private boolean ativo;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.REMOVE})
+    @JoinTable(joinColumns=@JoinColumn(name="usuario_id"),
+            inverseJoinColumns=@JoinColumn(name="autorizacao_id"))
     private List<Autorizacao> autorizacoes;
  
     public Usuario() {
