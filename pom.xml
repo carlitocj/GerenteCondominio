@@ -73,6 +73,12 @@
             <version>3.3.1</version>
         </dependency>
         
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>redmond</artifactId>  
+            <version>1.0.7</version>  
+        </dependency>
+        
         <!-- hibernate -->
         <dependency>
             <groupId>commons-lang</groupId>

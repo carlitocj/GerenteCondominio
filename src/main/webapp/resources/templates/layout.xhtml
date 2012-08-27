@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Gerente Condomínio</title>
+    </h:head>
+
+    <h:body>
+        <div id="top">
+            <ui:insert name="top"></ui:insert>            
+            <!--                <p:dock position="top">
+                                <p:menuitem value="Home" icon="/resources/images/dock/home.png" url="principal.jsf"/>  
+                                <p:menuitem value="Music" icon="/resources/images/dock/music.png" url="music.jsf"/>  
+                                <p:menuitem value="Video" icon="/resources/images/dock/video.png" url="video.jsf"/>  
+                                <p:menuitem value="Email" icon="/resources/images/dock/email.png" url="email.jsf"/>  
+                                <p:menuitem value="Portfolio" icon="/resources/images/dock/portfolio.png" url="#"/>  
+                                <p:menuitem value="Link" icon="/resources/images/dock/link.png" url="#"/>  
+                                <p:menuitem value="RSS" icon="/resources/images/dock/rss.png" url="#"/>  
+                                <p:menuitem value="History" icon="/resources/images/dock/history.png" url="#"/>  
+                            </p:dock>-->
+
+            <div id="login" align="right" >                    
+                <br/>
+                <h:outputText value="Usuário: #{usuarioController.usuario.nome}"/>
+                <br/><br/>
+                <h:outputLink value="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
+                    <h:outputText value="Sair"/>
+                </h:outputLink>                
+            </div>
+
+            <p:menubar>  
+                <p:menuitem value="Home" url="principal.jsf" />                    
+                <p:menuitem value="Music" url="music.jsf" />                    
+                <p:menuitem value="Video" url="video.jsf" />
+                <p:menuitem value="E-mail" url="email.jsf" />                    
+                <p:menuitem value="Portfolio" url="#" />
+                <p:menuitem value="Link" url="#" />                    
+                <p:menuitem value="Rss" url="#" />                    
+                <p:menuitem value="History" url="#" />
+
+                <p:submenu label="Help">  
+                    <p:menuitem value="Contents" url="#" />  
+                    <p:submenu label="Search" icon="resources/images/ui-icon-search">  
+                        <p:submenu label="Text">  
+                            <p:menuitem value="Workspace" url="#" />  
+                        </p:submenu>  
+                        <p:menuitem value="File" url="#" />  
+                    </p:submenu>  
+                </p:submenu> 
+
+            </p:menubar>            
+        </div>
+
+        <div>
+            <div id="left">                
+                <ui:insert name="left"></ui:insert>
+                <p:accordionPanel multiple="true">  
+                    <p:tab title="Cadastros">  
+
+                    </p:tab>  
+                    <p:tab title="Financeiro">  
+
+                    </p:tab>  
+                    <p:tab title="Calendário">  
+                        <br/>
+                        <p:calendar mode="inline" navigator="none"/>
+                        <br/>
+                    </p:tab>  
+                </p:accordionPanel> 
+            </div>
+
+            <div id="content" class="left_content">
+                <ui:insert name="content"></ui:insert>
+            </div>        
+        </div>
+    </h:body>
+
+</html>
