@@ -14,18 +14,7 @@
 
     <h:body>
         <div id="top">
-            <ui:insert name="top"></ui:insert>            
-            <!--                <p:dock position="top">
-                                <p:menuitem value="Home" icon="/resources/images/dock/home.png" url="principal.jsf"/>  
-                                <p:menuitem value="Music" icon="/resources/images/dock/music.png" url="music.jsf"/>  
-                                <p:menuitem value="Video" icon="/resources/images/dock/video.png" url="video.jsf"/>  
-                                <p:menuitem value="Email" icon="/resources/images/dock/email.png" url="email.jsf"/>  
-                                <p:menuitem value="Portfolio" icon="/resources/images/dock/portfolio.png" url="#"/>  
-                                <p:menuitem value="Link" icon="/resources/images/dock/link.png" url="#"/>  
-                                <p:menuitem value="RSS" icon="/resources/images/dock/rss.png" url="#"/>  
-                                <p:menuitem value="History" icon="/resources/images/dock/history.png" url="#"/>  
-                            </p:dock>-->
-
+            <ui:insert name="top"></ui:insert>
             <div id="login" align="right" >                    
                 <br/>
                 <h:outputText value="Usuário: #{usuarioController.usuario.nome}"/>
@@ -34,28 +23,29 @@
                     <h:outputText value="Sair"/>
                 </h:outputLink>                
             </div>
+            <h:form>
+                <p:menubar>  
+                    <p:menuitem value="Home" action="principal.jsf"/>
+                    <p:menuitem value="Music" url="music.jsf"/>                    
+                    <p:menuitem value="Video" url="video.jsf"/>
+                    <p:menuitem value="E-mail" url="email.jsf"/>                    
+                    <p:menuitem value="Portfolio" url="#" />
+                    <p:menuitem value="Link" url="#" />                    
+                    <p:menuitem value="Rss" url="#" />                    
+                    <p:menuitem value="History" url="#" />
 
-            <p:menubar>  
-                <p:menuitem value="Home" url="principal.jsf" />                    
-                <p:menuitem value="Music" url="music.jsf" />                    
-                <p:menuitem value="Video" url="video.jsf" />
-                <p:menuitem value="E-mail" url="email.jsf" />                    
-                <p:menuitem value="Portfolio" url="#" />
-                <p:menuitem value="Link" url="#" />                    
-                <p:menuitem value="Rss" url="#" />                    
-                <p:menuitem value="History" url="#" />
-
-                <p:submenu label="Help">  
-                    <p:menuitem value="Contents" url="#" />  
-                    <p:submenu label="Search" icon="resources/images/ui-icon-search">  
-                        <p:submenu label="Text">  
-                            <p:menuitem value="Workspace" url="#" />  
+                    <p:submenu label="Help">  
+                        <p:menuitem value="Contents" url="#" />  
+                        <p:submenu label="Search" icon="resources/images/ui-icon-search">  
+                            <p:submenu label="Text">  
+                                <p:menuitem value="Workspace" url="#" />  
+                            </p:submenu>  
+                            <p:menuitem value="File" url="#" />  
                         </p:submenu>  
-                        <p:menuitem value="File" url="#" />  
-                    </p:submenu>  
-                </p:submenu> 
+                    </p:submenu> 
 
-            </p:menubar>            
+                </p:menubar>            
+            </h:form>
         </div>
 
         <div>
@@ -76,8 +66,8 @@
                 </p:accordionPanel> 
             </div>
 
-            <div id="content" class="left_content">
-                <ui:insert name="content"></ui:insert>
+            <div class="left_content">
+                <ui:insert name="content" id="content"></ui:insert>
             </div>        
         </div>
     </h:body>
